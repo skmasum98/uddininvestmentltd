@@ -1,23 +1,71 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+	title?: string;
+	description?: string;
+}
+
+const { 
+	title = "Uddin Investment Ltd | Guaranteed Rent & Property Management London",
+	description = "Professional property services in London & Essex. Specializing in Guaranteed Rent, HMO Management, and Portfolio Growth for Landlords." 
+} = Astro.props;
+---
+
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		
+		<!-- Primary Meta Tags -->
+		<title>{title}</title>
+		<meta name="title" content={title} />
+		<meta name="description" content={description} />
+
+		<!-- Google Fonts: Inter (Professional Look) -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+		<!-- Open Graph / Facebook / LinkedIn (For Professional Sharing) -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://uddininvestmentltd.com/" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<!-- <meta property="og:image" content="/og-image.jpg" /> -->
+
 	</head>
-	<body>
-		<slot />
+	<body class="bg-slate-50 text-slate-900 font-sans antialiased selection:bg-blue-100 selection:text-blue-900">
+		
+		<!-- Main Content Wrapper -->
+		<main class="min-h-screen flex flex-col">
+			<Header />
+			<slot />
+			<Footer />
+		</main>
+
 	</body>
 </html>
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
+<style is:global>
+	:root {
+		--accent: 37, 99, 235; /* Blue-600 */
+	}
+	
+	html {
+		font-family: 'Inter', system-ui, sans-serif;
+	}
+
+	/* Smooth Transitions for professional feel */
+	* {
+		transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+		transition-duration: 150ms;
 	}
 </style>

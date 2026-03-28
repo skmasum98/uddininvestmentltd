@@ -1,0 +1,135 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+// Categorized areas based on your list for better UX
+const regions = [
+  {
+    title: "East London & Essex",
+    description: "Extensive coverage across Barking, Dagenham, and the wider Essex region.",
+    areas: ["Barking", "Beckton", "Bethnal Green", "Bow", "Canning Town", "Dagenham", "East Ham", "Ilford", "Leytonstone", "Walthamstow", "Whitechapel", "Brentwood", "Buckhurst Hill", "Chigwell", "Epping", "Essex", "Hornchurch", "Purfleet", "Rainham", "Romford", "South Woodford", "Upminster", "Wanstead"]
+  },
+  {
+    title: "South & Central London",
+    description: "Premium property management from Canary Wharf to the heart of Chelsea.",
+    areas: ["Balham", "Battersea", "Bermondsey", "Bexley", "Bexley Heath", "Brixton", "Bromley", "Camberwell", "Canary Wharf", "Catford", "Charlton", "Chelsea", "Chistlehurst", "Clapham", "Dartford", "Dulwich", "Earls Court", "Greenwich", "Herne Hill", "Kentish Town", "Lewisham", "London", "New Cross", "Peckham", "Pimlico"]
+  },
+  {
+    title: "North & West London",
+    description: "Specialized services in Harrow, Wembley, and across Northern boroughs.",
+    areas: ["Barnet", "Edgware", "Enfield", "Finsbury Park", "Harringay", "Highgate", "Tottenham", "Hammersmith", "Hampstead", "Harrow", "Hounslow", "Kilburn", "Shepherds Bush", "Wembley", "White City"]
+  }
+];
+---
+
+<Layout title="Areas Covered | Guaranteed Rent London & Essex | Uddin Investment">
+  
+  
+  <!-- Hero Section -->
+  <section class="bg-slate-900 py-20 lg:py-32 relative overflow-hidden text-center text-white">
+    <div class="max-w-4xl mx-auto px-6 relative z-10">
+      <h1 class="text-4xl md:text-6xl font-black mb-6 italic underline decoration-blue-500">Local Expertise. <br/> <span class="text-blue-400">London-Wide Coverage.</span></h1>
+      <p class="text-xl text-slate-400 leading-relaxed">
+        We are not tied to a single borough. We work with numerous local authorities to ensure you achieve the best possible rental income across London and Essex.
+      </p>
+    </div>
+    <!-- Decorative background -->
+    <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
+  </section>
+
+  <!-- Search/Filter Placeholder (Professional Look) -->
+  <div class="max-w-7xl mx-auto px-6 -mt-10 relative z-20">
+    <div class="bg-white p-6 rounded-3xl shadow-2xl border border-slate-100 flex flex-col md:flex-row items-center gap-4">
+        <div class="flex-1 w-full">
+            <p class="text-sm font-bold text-slate-500 uppercase tracking-widest mb-1">Check Your Location</p>
+            <input type="text" id="areaSearch" placeholder="Search for your borough (e.g. Barking, Chelsea...)" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:ring-2 focus:ring-blue-500 outline-none" />
+        </div>
+        <div class="bg-blue-600 px-8 py-4 rounded-2xl text-white font-bold hidden md:block">
+            60+ Areas
+        </div>
+    </div>
+  </div>
+
+  <!-- Main Areas Grid -->
+  <section class="py-24 bg-white px-6">
+    <div class="max-w-7xl mx-auto space-y-24">
+      {regions.map(region => (
+        <div class="region-group transition-all duration-500">
+          <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 border-b-2 border-slate-100 pb-6 gap-4">
+            <div class="max-w-2xl">
+                <h2 class="text-3xl font-black text-slate-900 uppercase italic decoration-blue-600 underline underline-offset-8 mb-4">{region.title}</h2>
+                <p class="text-slate-500 font-medium italic">{region.description}</p>
+            </div>
+            <div class="text-blue-600 font-black text-sm uppercase tracking-widest bg-blue-50 px-4 py-2 rounded-lg">
+                {region.areas.length} Locations
+            </div>
+          </div>
+          
+          <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-6 gap-x-8">
+            {region.areas.map(area => (
+              <div class="area-item flex items-center gap-3 group cursor-default">
+                <div class="h-2 w-2 bg-blue-500 rounded-full group-hover:scale-150 transition-transform shadow-[0_0_10px_rgba(59,130,246,0.5)]"></div>
+                <span class="text-slate-700 font-bold group-hover:text-blue-600 transition-colors">{area}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Local Authority Trust Section -->
+  <section class="py-24 bg-slate-50 px-6">
+    <div class="max-w-5xl mx-auto text-center">
+        <div class="inline-block p-4 bg-white rounded-2xl shadow-sm border border-slate-200 mb-8">
+            <p class="text-blue-600 font-black text-sm uppercase tracking-tighter italic underline decoration-slate-900 underline-offset-4">Successfully Tendered & Awarded Contracts</p>
+        </div>
+        <h2 class="text-3xl md:text-5xl font-black text-slate-900 mb-8">Trusted by Local Authorities</h2>
+        <p class="text-lg text-slate-600 leading-relaxed italic decoration-blue-400 underline underline-offset-8">
+            We have been awarded contracts to supply properties to a large number of local authorities. This allows us to offer your property to numerous boroughs, ensuring you achieve the highest possible market rent with zero risk.
+        </p>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="py-24 bg-white text-center px-6">
+    <div class="max-w-4xl mx-auto bg-slate-900 p-16 rounded-[50px] text-white relative overflow-hidden shadow-2xl">
+        <h2 class="text-3xl md:text-5xl font-black mb-6">Don't see your area?</h2>
+        <p class="text-slate-400 text-lg mb-10">Our network is constantly expanding. Contact our team to see if we can cover your property today.</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/#contact" class="px-10 py-5 bg-blue-600 text-white rounded-2xl font-black text-xl hover:bg-blue-700 transition-all shadow-xl shadow-blue-400/20">Check My Property</a>
+            <a href="mailto:info@uddininvestmentltd.com" class="px-10 py-5 bg-slate-800 text-white rounded-2xl font-black text-xl hover:bg-slate-700 transition-all">Email Inquiry</a>
+        </div>
+        <!-- Background Decor -->
+        <div class="absolute -top-10 -right-10 w-40 h-40 bg-blue-600/20 rounded-full blur-3xl"></div>
+    </div>
+  </section>
+
+  
+
+</Layout>
+
+<script>
+  // Simple search filter to find areas
+  const searchInput = document.getElementById('areaSearch');
+  const areaItems = document.querySelectorAll('.area-item');
+
+  searchInput?.addEventListener('input', (e) => {
+    const term = (e.target as HTMLInputElement).value.toLowerCase();
+    areaItems.forEach(item => {
+      const areaName = item.textContent?.toLowerCase() || '';
+      if (areaName.includes(term)) {
+        (item as HTMLElement).style.display = 'flex';
+        (item as HTMLElement).style.opacity = '1';
+      } else {
+        (item as HTMLElement).style.display = 'none';
+        (item as HTMLElement).style.opacity = '0';
+      }
+    });
+  });
+</script>
+
+<style>
+    .area-item {
+        transition: opacity 0.3s ease;
+    }
+</style>

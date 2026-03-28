@@ -1,0 +1,118 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const mainServices = [
+  {
+    id: "guaranteed-rent",
+    title: "Guaranteed Rent Scheme",
+    icon: "💰",
+    description: "Our flagship service offering 1-5 year leases with a 100% rental guarantee, even during void periods.",
+    features: ["Zero Commission Fees", "Prompt Monthly Payments", "Internal Maintenance Included", "No Tenant Finding Fees"]
+  },
+  {
+    id: "hmo-management",
+    title: "HMO Excellence",
+    icon: "🏠",
+    description: "Expert management for Houses in Multiple Occupation. We handle the complexities of multi-tenant properties.",
+    features: ["Regulatory Compliance", "Tenant Vetting & Placements", "Room-by-Room Management", "Higher Yield Optimization"]
+  },
+  {
+    id: "portfolio-management",
+    title: "Portfolio Management",
+    icon: "📊",
+    description: "Strategic oversight for landlords with multiple properties. We focus on long-term growth and stability.",
+    features: ["Single Point of Contact", "Performance Tracking", "Refurbishment Oversight", "Lease Renewals"]
+  },
+  {
+    id: "maintenance",
+    title: "Proactive Maintenance",
+    icon: "🛠️",
+    description: "Expert handling of all property-related tasks to ensure a smooth and profitable experience.",
+    features: ["24/7 Emergency Support", "Regular Inspections", "Vetted Contractors", "Cost-Effective Solutions"]
+  }
+];
+---
+
+<Layout title="Our Services | Professional Property Solutions | Uddin Investment">
+  
+
+  <!-- Hero Section -->
+  <section class="py-20 bg-slate-900 text-white relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <h1 class="text-4xl md:text-6xl font-black mb-6">Tailored Services for <br/> <span class="text-blue-400 italic">Modern Landlords.</span></h1>
+      <p class="text-xl text-slate-400 max-w-2xl mx-auto">
+        We provide a comprehensive suite of property services designed to optimize your investments and eliminate stress.
+      </p>
+    </div>
+    <!-- Abstract background element -->
+    <div class="absolute -bottom-24 -right-24 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl"></div>
+  </section>
+
+  <!-- Main Services Grid -->
+  <section class="py-24 bg-white px-6">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12">
+      {mainServices.map(service => (
+        <div id={service.id} class="bg-slate-50 p-10 rounded-[40px] border border-slate-100 hover:border-blue-500 hover:bg-white hover:shadow-2xl transition-all duration-500 group">
+          <div class="flex items-start justify-between mb-8">
+            <div class="text-6xl group-hover:scale-110 transition-transform">{service.icon}</div>
+            <div class="bg-white px-4 py-1 rounded-full text-xs font-black text-blue-600 border border-blue-100 uppercase tracking-widest">Active Service</div>
+          </div>
+          <h2 class="text-3xl font-bold text-slate-900 mb-4">{service.title}</h2>
+          <p class="text-slate-600 mb-8 leading-relaxed italic">{service.description}</p>
+          
+          <ul class="space-y-4">
+            {service.features.map(feature => (
+              <li class="flex items-center gap-3 text-slate-800 font-medium">
+                <svg class="h-5 w-5 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                </svg>
+                {feature}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Process / Efficiency Section -->
+  <section class="py-24 bg-slate-950 text-white px-6 overflow-hidden">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16">
+      <div class="flex-1 space-y-8">
+        <h2 class="text-3xl md:text-5xl font-black leading-tight italic decoration-blue-500 underline underline-offset-8">Transparent Communication. <br/> Expert Handling.</h2>
+        <p class="text-slate-400 text-lg leading-relaxed italic">
+          Our commitment to proactive maintenance and transparent communication ensures a smooth and profitable experience for our clients. We handle all property-related tasks so you don't have to.
+        </p>
+        <div class="grid grid-cols-2 gap-8">
+            <div>
+                <p class="text-4xl font-bold text-blue-400">24/7</p>
+                <p class="text-sm text-slate-500 uppercase font-bold tracking-widest mt-2 underline decoration-blue-300 underline-offset-4">Support Available</p>
+            </div>
+            <div>
+                <p class="text-4xl font-bold text-blue-400">100%</p>
+                <p class="text-sm text-slate-500 uppercase font-bold tracking-widest mt-2 underline decoration-blue-300 underline-offset-4">Compliance Rating</p>
+            </div>
+        </div>
+      </div>
+      <div class="flex-1 relative">
+        <div class="border-2 border-blue-500/20 rounded-3xl p-4">
+            <img src="https://images.unsplash.com/photo-1554232456-8727aae0cfa4?auto=format&fit=crop&w=800&q=80" alt="Management Expertise" class="rounded-2xl shadow-2xl grayscale hover:grayscale-0 transition-all duration-700" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="py-24 bg-white text-center px-6">
+    <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl md:text-5xl font-black text-slate-900 mb-6 italic underline decoration-blue-600">Optimise your investment today.</h2>
+        <p class="text-slate-600 text-lg mb-12">Whether you have a single flat or a large portfolio, our expert team is ready to help you achieve consistent, hassle-free returns.</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/#contact" class="px-10 py-5 bg-blue-600 text-white rounded-2xl font-black text-xl hover:bg-blue-700 transition-all shadow-xl shadow-blue-200">Contact Expert Team</a>
+            <a href="/guaranteed-rent" class="px-10 py-5 bg-slate-900 text-white rounded-2xl font-black text-xl hover:bg-slate-800 transition-all">Guaranteed Rent Details</a>
+        </div>
+    </div>
+  </section>
+
+
+</Layout>

@@ -1,0 +1,123 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const benefits = [
+  { title: "No Void Periods", desc: "You get paid even if the property is empty during tenant turnovers.", icon: "📉" },
+  { title: "0% Commission", desc: "Unlike high-street agents, we don't charge monthly management fees or commissions.", icon: "💰" },
+  { title: "Internal Maintenance", desc: "We cover small internal repairs and maintain the property to a high standard.", icon: "🛠️" },
+  { title: "Legal & Evictions", desc: "We handle all legal costs and tenant issues, including evictions if necessary.", icon: "⚖️" },
+  { title: "Long-term Security", desc: "Flexible contracts ranging from 1 to 5 years for your peace of mind.", icon: "🛡️" },
+  { title: "Regular Inspections", desc: "We carry out frequent inspections to ensure your property is well-kept.", icon: "🔍" }
+];
+
+const steps = [
+  { num: "01", title: "Free Valuation", desc: "We visit your property and provide a competitive monthly rental offer." },
+  { num: "02", title: "Compliance Check", desc: "We ensure all safety certificates (Gas, Electric, EPC) are up to date." },
+  { num: "03", title: "Sign Agreement", desc: "We sign a management agreement, and you hand over the keys." },
+  { num: "04", title: "Guaranteed Rent", desc: "Rent starts hitting your bank account every month, guaranteed." }
+];
+---
+
+<Layout title="Guaranteed Rent Scheme | Uddin Investment Ltd">
+  
+ 
+
+  <!-- Hero Section -->
+  <section class="bg-slate-900 py-20 lg:py-32 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 relative z-10 text-center lg:text-left grid lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <h1 class="text-4xl md:text-6xl font-black text-white leading-tight">
+          Fixed Income. <br/> <span class="text-blue-400 underline decoration-slate-700">Zero Commission.</span>
+        </h1>
+        <p class="mt-6 text-xl text-slate-400 max-w-xl">
+          Our Guaranteed Rent scheme is the most popular choice for London landlords. We become your ideal tenant, paying you rent every month without fail.
+        </p>
+        <div class="mt-10">
+            <a href="/#contact" class="inline-block bg-blue-600 text-white px-10 py-5 rounded-2xl font-black text-lg hover:bg-blue-500 transition-all shadow-xl shadow-blue-900/20">Apply for Guaranteed Rent</a>
+        </div>
+      </div>
+      <div class="hidden lg:block relative">
+        <div class="bg-blue-600/10 p-4 rounded-[40px] border border-white/10">
+            <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800" alt="Property Management" class="rounded-[30px] shadow-2xl" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison Table -->
+  <section class="py-24 bg-white px-6">
+    <div class="max-w-5xl mx-auto overflow-hidden rounded-3xl border border-slate-200 shadow-sm">
+      <table class="w-full text-left border-collapse">
+        <thead>
+          <tr class="bg-slate-50">
+            <th class="p-6 text-xl font-bold text-slate-900">Features</th>
+            <th class="p-6 text-xl font-bold text-slate-400">Traditional Agents</th>
+            <th class="p-6 text-xl font-bold text-blue-600 bg-blue-50/50">Guaranteed Rent</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-slate-100">
+          {[
+            ["Management Fee", "8% - 15% Monthly", "0% (Zero)"],
+            ["Rent Paid When Empty?", "No", "Yes, Always"],
+            ["Legal/Eviction Costs", "Landlord Pays", "We Pay"],
+            ["Maintenance Calls", "Disturb Landlord", "We Handle Small Repairs"],
+            ["Tenant Sourcing Fee", "Typically 1 Month's Rent", "None"]
+          ].map(([label, trad, ours]) => (
+            <tr>
+              <td class="p-6 font-semibold text-slate-800">{label}</td>
+              <td class="p-6 text-slate-500">{trad}</td>
+              <td class="p-6 font-bold text-blue-700 bg-blue-50/30">{ours}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Detailed Benefits -->
+  <section class="py-24 bg-slate-50 px-6">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {benefits.map(b => (
+        <div class="bg-white p-10 rounded-3xl border border-slate-200 hover:shadow-2xl transition-all group">
+          <div class="text-5xl mb-6 group-hover:scale-110 transition-transform">{b.icon}</div>
+          <h3 class="text-xl font-bold text-slate-900 mb-4">{b.title}</h3>
+          <p class="text-slate-600 leading-relaxed">{b.desc}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Process Steps -->
+  <section id="how-it-works" class="py-24 bg-white px-6 text-center">
+    <h2 class="text-4xl font-bold mb-16">How to get started</h2>
+    <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-8 relative">
+        <!-- Connecting Line (Desktop) -->
+        <div class="hidden md:block absolute top-12 left-0 w-full h-0.5 bg-blue-100 -z-10"></div>
+      {steps.map(s => (
+        <div class="flex flex-col items-center">
+          <div class="w-20 h-20 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-black mb-6 border-8 border-white shadow-lg">
+            {s.num}
+          </div>
+          <h3 class="text-xl font-bold mb-3">{s.title}</h3>
+          <p class="text-slate-500 text-sm leading-relaxed px-4">{s.desc}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="py-20 px-6">
+    <div class="max-w-5xl mx-auto bg-blue-600 rounded-[40px] p-12 text-center text-white relative overflow-hidden shadow-2xl shadow-blue-300">
+        <h2 class="text-3xl md:text-5xl font-black mb-6">Experience Stress-Free Landlording</h2>
+        <p class="text-blue-100 text-lg mb-10 max-w-2xl mx-auto">Join hundreds of landlords across London who have switched to Uddin Investment Ltd for a truly passive income.</p>
+        <a href="/#contact" class="bg-white text-blue-600 px-12 py-5 rounded-2xl font-black text-lg hover:bg-slate-100 transition-all inline-block">Request a Call Back</a>
+    </div>
+  </section>
+
+  
+
+</Layout>
+
+<style>
+    html { scroll-behavior: smooth; }
+</style>

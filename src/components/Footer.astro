@@ -1,0 +1,105 @@
+---
+const currentYear = new Date().getFullYear();
+
+const links = {
+  company: [
+    { name: 'Home', href: '/' },
+    { name: 'About Us', href: '/about' },
+    { name: 'Areas Covered', href: '/areas' },
+    { name: 'Contact Us', href: '/contact' },
+  ],
+  services: [
+    { name: 'Guaranteed Rent', href: '/guaranteed-rent' },
+    { name: 'HMO Management', href: '/services#hmo-management' },
+    { name: 'Portfolio Management', href: '/services#portfolio-management' },
+    { name: 'Property Maintenance', href: '/services#maintenance' },
+  ],
+  legal: [
+    { name: 'Terms & Conditions', href: '/terms' },
+    { name: 'Privacy Policy', href: '/privacy' },
+    { name: 'Cookie Policy', href: '/cookies' },
+  ]
+};
+---
+
+<!-- Updated Background: Deep Navy Blue with a subtle top border highlight -->
+<footer class="relative bg-slate-900 text-slate-300 pt-20 pb-10 px-6 border-t-4 border-blue-600 overflow-hidden">
+  
+  <!-- Subtle Radial Gradient for depth (Optional) -->
+  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_top,rgba(37,99,235,0.1),transparent_50%)] pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto relative z-10">
+    
+    <!-- Top Section: Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+      
+      <!-- Column 1: Brand -->
+      <div class="space-y-6">
+        <div class="flex flex-col">
+            <span class="text-2xl font-black tracking-tighter text-white italic underline decoration-blue-500 decoration-2 underline-offset-4">UDDIN <span class="text-blue-400">INVESTMENT</span></span>
+            <span class="text-[10px] uppercase tracking-[0.3em] text-slate-400 font-bold mt-1">Property Management Ltd</span>
+        </div>
+        <p class="text-sm leading-relaxed italic text-slate-400">
+          Dedicated to providing landlords with stress-free, guaranteed rental income and expert property management across London and Essex.
+        </p>
+      </div>
+
+      <!-- Column 2: Quick Links -->
+      <div>
+        <h3 class="text-white font-bold uppercase tracking-widest text-xs mb-6 italic border-l-2 border-blue-500 pl-3">Quick Navigation</h3>
+        <ul class="space-y-4 text-sm font-medium">
+          {links.company.map(link => (
+            <li><a href={link.href} class="hover:text-blue-400 transition-colors flex items-center gap-2"> {link.name}</a></li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Column 3: Services -->
+      <div>
+        <h3 class="text-white font-bold uppercase tracking-widest text-xs mb-6 italic border-l-2 border-blue-500 pl-3">Our Services</h3>
+        <ul class="space-y-4 text-sm font-medium">
+          {links.services.map(link => (
+            <li><a href={link.href} class="hover:text-blue-400 transition-colors flex items-center gap-2"> {link.name}</a></li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Column 4: Compliance & Contact -->
+      <div>
+        <h3 class="text-white font-bold uppercase tracking-widest text-xs mb-6 italic border-l-2 border-blue-500 pl-3">Company Info</h3>
+        <div class="space-y-4 text-sm italic">
+          <div class="flex gap-3">
+            <span class="text-blue-400">📍</span>
+            <p class="text-slate-300">5 Elm Lawn Close, Uxbridge,<br/> England, UB8 1NX</p>
+          </div>
+          <div class="flex gap-3 border-t border-slate-800 pt-4">
+            <span class="text-blue-400">✉️</span>
+            <p class="font-bold text-slate-100 underline decoration-blue-500 underline-offset-4">info@uddininvestmentltd.com</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Bar: Copyright & Legal -->
+    <div class="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-6">
+      <div class="text-[11px] font-bold uppercase tracking-widest text-slate-400">
+        &copy; {currentYear} <span class="text-white">Uddin Investment Ltd</span>. All rights reserved.
+      </div>
+      
+      <div class="flex flex-wrap justify-center gap-6 text-[11px] font-bold uppercase tracking-widest text-slate-500">
+        {links.legal.map(link => (
+          <a href={link.href} class="hover:text-blue-400 transition-colors">{link.name}</a>
+        ))}
+      </div>
+    </div>
+
+    <!-- Legal Compliance Text -->
+    <div class="mt-8 text-center border-t border-slate-800 pt-8">
+        <p class="text-[10px] text-slate-500 leading-relaxed max-w-4xl mx-auto italic uppercase tracking-tighter">
+            Company Number: 16787880 | SIC Code: 68209 - Other letting and operating of own or leased real estate. <br/>
+            Uddin Investment Ltd is a private limited company registered in England and Wales.
+        </p>
+    </div>
+
+  </div>
+</footer>

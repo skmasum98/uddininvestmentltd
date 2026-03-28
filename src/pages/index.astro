@@ -1,11 +1,195 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+// Areas Data Organized by Region for better UI
+const regions = [
+  {
+    name: "East London & Essex",
+    areas: ["Barking", "Beckton", "Bethnal Green", "Bow", "Canning Town", "Dagenham", "East Ham", "Ilford", "Leytonstone", "Walthamstow", "Whitechapel", "Brentwood", "Buckhurst Hill", "Chigwell", "Epping", "Romford", "Rainham", "Purfleet", "Upminster"]
+  },
+  {
+    name: "North & West London",
+    areas: ["Barnet", "Edgware", "Enfield", "Finsbury Park", "Harringay", "Highgate", "Tottenham", "Harrow", "Hounslow", "Hammersmith", "Shepherds Bush", "Wembley", "White City"]
+  },
+  {
+    name: "South & Central London",
+    areas: ["Balham", "Battersea", "Bermondsey", "Bexley", "Brixton", "Bromley", "Camberwell", "Canary Wharf", "Catford", "Charlton", "Chelsea", "Clapham", "Dulwich", "Greenwich", "Lewisham", "Peckham", "Pimlico", "Wandsworth"]
+  }
+];
+
+const services = [
+  {
+    title: "Guaranteed Rent",
+    desc: "Fixed monthly income for 1-5 years. No void periods, no commission, and we handle all maintenance.",
+    icon: "💰"
+  },
+  {
+    title: "HMO Specialist",
+    desc: "Expert management for Houses in Multiple Occupation. We handle complex regulations and multiple tenants.",
+    icon: "🏠"
+  },
+  {
+    title: "Portfolio Management",
+    desc: "Strategic oversight for landlords with multiple properties to maximize yield and minimize stress.",
+    icon: "📊"
+  },
+  {
+    title: "Property Maintenance",
+    desc: "Proactive and reactive maintenance handled by our expert team to keep your asset in top condition.",
+    icon: "🛠️"
+  }
+];
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Uddin Investment Ltd | Guaranteed Rent & Property Management">
+  
+  
+
+  <!-- Hero Section -->
+  <section class="relative bg-white pt-16 pb-24 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+      <div class="relative z-10">
+        <div class="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 px-3 py-1 rounded-full text-blue-700 text-sm font-bold mb-6">
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-600"></span>
+          </span>
+          Guaranteed Rent Specialists
+        </div>
+        <h1 class="text-5xl md:text-7xl font-extrabold text-slate-900 tracking-tight leading-[1.1]">
+          Rent Guaranteed. <br/> <span class="text-blue-600">Every Single Month.</span>
+        </h1>
+        <p class="mt-8 text-lg text-slate-600 leading-relaxed max-w-xl">
+          Stop worrying about void periods or problematic tenants. We offer a 1-5 year lease with <strong>guaranteed income</strong>, 0% commission, and full property management across London & Essex.
+        </p>
+        <div class="mt-10 flex flex-col sm:flex-row gap-4">
+          <a href="#contact" class="px-8 py-4 bg-blue-600 text-white rounded-xl font-bold text-lg shadow-lg shadow-blue-200 hover:bg-blue-700 hover:-translate-y-1 transition-all text-center">Get Your Free Valuation</a>
+          <a href="#services" class="px-8 py-4 bg-white border border-slate-200 text-slate-900 rounded-xl font-bold text-lg hover:bg-slate-50 transition-all text-center">Our Services</a>
+        </div>
+      </div>
+      <div class="relative">
+        <div class="rounded-3xl overflow-hidden shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-500">
+          <img src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?auto=format&fit=crop&w=800&q=80" alt="London Property" class="w-full h-125 object-cover" />
+        </div>
+        <div class="absolute -bottom-10 -left-10 bg-white p-8 rounded-2xl shadow-xl border border-slate-100 hidden md:block">
+          <p class="text-4xl font-black text-blue-600">0%</p>
+          <p class="text-sm font-bold text-slate-500 uppercase tracking-widest">Management Commission</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Grid -->
+  <section id="services" class="py-24 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-6 text-center mb-16">
+      <h2 class="text-3xl md:text-5xl font-bold text-slate-900 mb-4">Tailored Property Solutions</h2>
+      <p class="text-slate-600 max-w-2xl mx-auto">We provide a comprehensive suite of services designed to optimize your investment and remove the stress of landlording.</p>
+    </div>
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {services.map(s => (
+        <div class="bg-white p-8 rounded-2xl border border-slate-200 hover:border-blue-500 transition-all group shadow-sm hover:shadow-xl">
+          <div class="text-4xl mb-6">{s.icon}</div>
+          <h3 class="text-xl font-bold text-slate-900 mb-3">{s.title}</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">{s.desc}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Areas Covered Section -->
+  <section id="areas" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+        <div class="max-w-xl">
+          <h2 class="text-3xl md:text-5xl font-bold text-slate-900 mb-4">Areas We Cover</h2>
+          <p class="text-slate-600">We work with numerous local authorities across London and Essex. If your property is in any of these areas, we can guarantee your rent today.</p>
+        </div>
+        <div class="bg-blue-600 text-white px-6 py-3 rounded-full font-bold text-sm">
+          60+ Locations Covered
+        </div>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-12">
+        {regions.map(region => (
+          <div class="space-y-6">
+            <h3 class="text-lg font-black text-blue-600 uppercase tracking-widest border-b border-blue-100 pb-2">{region.name}</h3>
+            <ul class="grid grid-cols-2 gap-y-3 gap-x-4">
+              {region.areas.map(area => (
+                <li class="flex items-center gap-2 text-slate-700 text-sm hover:text-blue-600 cursor-default">
+                  <span class="h-1.5 w-1.5 bg-slate-300 rounded-full group-hover:bg-blue-600"></span>
+                  {area}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-24 bg-slate-900 text-white overflow-hidden relative">
+    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 relative z-10">
+      <div>
+        <h2 class="text-3xl md:text-5xl font-bold mb-6">Ready to secure <br/> your income?</h2>
+        <p class="text-slate-400 text-lg mb-10">Fill out the form below and our expert team will provide a free rental valuation within 24 hours.</p>
+        
+        <div class="space-y-6">
+          <div class="flex items-start gap-4">
+            <div class="bg-slate-800 p-3 rounded-lg text-blue-400">📍</div>
+            <div>
+              <p class="font-bold">Registered Office</p>
+              <p class="text-slate-400 text-sm">5 Elm Lawn Close, Uxbridge, UB8 1NX</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="bg-slate-800 p-3 rounded-lg text-blue-400">✉️</div>
+            <div>
+              <p class="font-bold">Email Us</p>
+              <p class="text-slate-400 text-sm">info@uddininvestmentltd.com</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <form class="bg-white p-8 md:p-10 rounded-3xl space-y-4 shadow-2xl">
+        <div class="grid md:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-slate-700 text-sm font-bold mb-2">Name</label>
+            <input type="text" placeholder="Your Name" class="w-full px-4 py-3 rounded-xl border border-slate-200 text-slate-900 focus:ring-2 focus:ring-blue-500 outline-none transition-all" />
+          </div>
+          <div>
+            <label class="block text-slate-700 text-sm font-bold mb-2">Phone</label>
+            <input type="tel" placeholder="Your Phone" class="w-full px-4 py-3 rounded-xl border border-slate-200 text-slate-900 focus:ring-2 focus:ring-blue-500 outline-none transition-all" />
+          </div>
+        </div>
+        <div>
+          <label class="block text-slate-700 text-sm font-bold mb-2">Property Address</label>
+          <input type="text" placeholder="Full Postcode / Street" class="w-full px-4 py-3 rounded-xl border border-slate-200 text-slate-900 focus:ring-2 focus:ring-blue-500 outline-none transition-all" />
+        </div>
+        <div>
+          <label class="block text-slate-700 text-sm font-bold mb-2">Property Type</label>
+          <select class="w-full px-4 py-3 rounded-xl border border-slate-200 text-slate-900 focus:ring-2 focus:ring-blue-500 outline-none transition-all">
+            <option>1 Bedroom Flat</option>
+            <option>2 Bedroom Flat</option>
+            <option>3+ Bedroom House</option>
+            <option>HMO Property</option>
+          </select>
+        </div>
+        <button class="w-full py-4 bg-blue-600 text-white font-black rounded-xl hover:bg-blue-700 transition-all shadow-lg shadow-blue-200">Submit Valuation Request</button>
+      </form>
+    </div>
+    
+    <!-- Background Decor -->
+    <div class="absolute top-0 right-0 w-1/2 h-full bg-blue-600/5 -skew-x-12 translate-x-32"></div>
+  </section>
+
+
 </Layout>
+
+<style>
+  /* Smooth scroll support */
+  html {
+    scroll-behavior: smooth;
+  }
+</style>

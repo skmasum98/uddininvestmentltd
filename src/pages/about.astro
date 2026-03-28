@@ -1,0 +1,109 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const values = [
+  {
+    title: "Proactive Maintenance",
+    desc: "We don't wait for things to break. Our team conducts regular inspections and handles repairs swiftly to preserve your property's value.",
+    icon: "🛡️"
+  },
+  {
+    title: "Transparent Communication",
+    desc: "No hidden fees or confusing jargon. We provide clear, honest updates and maintain an open line of communication with every client.",
+    icon: "💬"
+  },
+  {
+    title: "Expert Handling",
+    desc: "From complex HMO regulations to local authority contracts, our team has the expertise to navigate the UK property market seamlessly.",
+    icon: "🎓"
+  }
+];
+---
+
+<Layout title="About Us | Uddin Investment Ltd - Excellence in Property">
+  
+  
+
+  <!-- Hero Section -->
+  <section class="py-20 bg-slate-50 border-b border-slate-100">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <h1 class="text-4xl md:text-6xl font-black text-slate-900 mb-6">Our Mission is Your <br/> <span class="text-blue-600">Peace of Mind.</span></h1>
+      <p class="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+        Uddin Investment Ltd was founded with a clear vision: to bridge the gap between landlords seeking stability and the growing demand for quality housing in London and Essex.
+      </p>
+    </div>
+  </section>
+
+  <!-- Company Overview -->
+  <section class="py-24 bg-white px-6">
+    <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+      <div class="relative">
+        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80" alt="Professional Office" class="rounded-3xl shadow-2xl" />
+        <div class="absolute -bottom-6 -right-6 bg-blue-600 text-white p-8 rounded-2xl hidden md:block">
+            <p class="text-3xl font-bold">Expert</p>
+            <p class="text-blue-100">Property Managers</p>
+        </div>
+      </div>
+      <div class="space-y-6">
+        <h2 class="text-3xl font-bold text-slate-900">A suite of property services tailored to meet your diverse needs.</h2>
+        <p class="text-slate-600 leading-relaxed text-lg">
+          From our renowned <strong>Guaranteed Rent scheme</strong>, offering guaranteed income and full management, to our expertise in <strong>HMO properties</strong> and portfolio management, we have the solutions to optimise your investments.
+        </p>
+        <p class="text-slate-600 leading-relaxed text-lg">
+          We have successfully tendered and been awarded contracts to supply properties to a large number of local authorities across London & Essex. This unique position allows us to offer landlords the highest level of security and income potential.
+        </p>
+        <div class="pt-6 flex flex-wrap gap-4">
+            <div class="px-4 py-2 bg-slate-100 rounded-full text-sm font-bold text-slate-700 italic underline decoration-blue-500">London Coverage</div>
+            <div class="px-4 py-2 bg-slate-100 rounded-full text-sm font-bold text-slate-700 italic underline decoration-blue-500">Essex Expertise</div>
+            <div class="px-4 py-2 bg-slate-100 rounded-full text-sm font-bold text-slate-700 italic underline decoration-blue-500">HMO Specialist</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Values -->
+  <section class="py-24 bg-slate-950 text-white px-6">
+    <div class="max-w-7xl mx-auto text-center mb-16">
+      <h2 class="text-3xl md:text-5xl font-bold mb-4">Our Commitment</h2>
+      <p class="text-slate-400">The pillars that define Uddin Investment Ltd.</p>
+    </div>
+    <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
+      {values.map(v => (
+        <div class="bg-slate-900 p-10 rounded-3xl border border-slate-800 hover:border-blue-500 transition-all">
+          <div class="text-4xl mb-6">{v.icon}</div>
+          <h3 class="text-xl font-bold mb-4">{v.title}</h3>
+          <p class="text-slate-400 leading-relaxed">{v.desc}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Legal & Compliance (Trust Section) -->
+  <section class="py-24 bg-white px-6">
+    <div class="max-w-4xl mx-auto bg-slate-50 p-12 rounded-[40px] border border-slate-200 shadow-sm text-center">
+      <h2 class="text-2xl font-bold text-slate-900 mb-8">Legal & Compliance Information</h2>
+      <div class="grid md:grid-cols-2 gap-12 text-left">
+        <div class="space-y-4">
+            <p class="text-xs uppercase tracking-widest text-slate-400 font-bold">Registered Company</p>
+            <p class="text-lg font-bold text-slate-800">Uddin Investment Ltd</p>
+            <p class="text-sm text-slate-600 leading-relaxed">Company Number: <span class="font-bold">16787880</span></p>
+            <p class="text-sm text-slate-600 leading-relaxed italic decoration-blue-400 underline">Nature of Business: 68209 - Other letting and operating of own or leased real estate</p>
+        </div>
+        <div class="space-y-4 border-t md:border-t-0 md:border-l border-slate-200 pt-8 md:pt-0 md:pl-12">
+            <p class="text-xs uppercase tracking-widest text-slate-400 font-bold">Registered Office</p>
+            <p class="text-lg font-bold text-slate-800 italic">5 Elm Lawn Close</p>
+            <p class="text-sm text-slate-600 leading-relaxed italic">Uxbridge, England, <br/>UB8 1NX</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-24 text-center px-6">
+    <h2 class="text-3xl font-bold text-slate-900 mb-8 italic">Ready for a smoother, more profitable experience?</h2>
+    <a href="/#contact" class="px-12 py-5 bg-blue-600 text-white rounded-2xl font-black text-xl hover:bg-blue-700 transition-all shadow-xl shadow-blue-200 inline-block">Partner With Us Today</a>
+  </section>
+
+  
+
+</Layout>

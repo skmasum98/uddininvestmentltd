@@ -29,11 +29,6 @@ const services = [
     icon: "🏠"
   },
   {
-    title: "Portfolio Management",
-    desc: "Strategic oversight for landlords with multiple properties to maximize yield and minimize stress.",
-    icon: "📊"
-  },
-  {
     title: "Property Maintenance",
     desc: "Proactive and reactive maintenance handled by our expert team to keep your asset in top condition.",
     icon: "🛠️"
@@ -85,15 +80,41 @@ const services = [
       <h2 class="text-3xl md:text-5xl font-bold text-slate-900 mb-4">Tailored Property Solutions</h2>
       <p class="text-slate-600 max-w-2xl mx-auto">We provide a comprehensive suite of services designed to optimize your investment and remove the stress of landlording.</p>
     </div>
-    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-      {services.map(s => (
-        <div class="bg-white p-8 rounded-2xl border border-slate-200 hover:border-blue-500 transition-all group shadow-sm hover:shadow-xl">
-          <div class="text-4xl mb-6">{s.icon}</div>
-          <h3 class="text-xl font-bold text-slate-900 mb-3">{s.title}</h3>
-          <p class="text-slate-600 text-sm leading-relaxed">{s.desc}</p>
+    <div class="max-w-6xl mx-auto px-6 py-16">
+  <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 place-items-center">
+    
+    {services.map((s) => (
+      <div class="group w-full max-w-sm bg-white/80 backdrop-blur-lg p-8 rounded-3xl border border-slate-200 
+                  hover:border-blue-500 transition-all duration-300 shadow-md hover:shadow-2xl hover:-translate-y-2">
+
+        {/* Icon */}
+        <div class="w-16 h-16 flex items-center justify-center rounded-2xl 
+                    bg-gradient-to-tr from-blue-500 to-indigo-500 text-white text-2xl mb-6 
+                    shadow-lg group-hover:scale-110 transition">
+          {s.icon}
         </div>
-      ))}
-    </div>
+
+        {/* Title */}
+        <h3 class="text-xl font-semibold text-slate-900 mb-3 group-hover:text-blue-600 transition">
+          {s.title}
+        </h3>
+
+        {/* Description */}
+        <p class="text-slate-600 text-sm leading-relaxed mb-5">
+          {s.desc}
+        </p>
+
+        {/* CTA */}
+        <button class="text-sm font-medium text-blue-600 hover:text-white 
+                       border border-blue-500 px-4 py-2 rounded-full 
+                       hover:bg-blue-500 transition">
+          Learn More →
+        </button>
+      </div>
+    ))}
+
+  </div>
+</div>
   </section>
 
   <!-- Areas Covered Section -->

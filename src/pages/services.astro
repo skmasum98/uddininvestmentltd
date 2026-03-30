@@ -16,13 +16,7 @@ const mainServices = [
     description: "Expert management for Houses in Multiple Occupation. We handle the complexities of multi-tenant properties.",
     features: ["Regulatory Compliance", "Tenant Vetting & Placements", "Room-by-Room Management", "Higher Yield Optimization"]
   },
-  {
-    id: "portfolio-management",
-    title: "Portfolio Management",
-    icon: "📊",
-    description: "Strategic oversight for landlords with multiple properties. We focus on long-term growth and stability.",
-    features: ["Single Point of Contact", "Performance Tracking", "Refurbishment Oversight", "Lease Renewals"]
-  },
+  
   {
     id: "maintenance",
     title: "Proactive Maintenance",
@@ -49,31 +43,81 @@ const mainServices = [
   </section>
 
   <!-- Main Services Grid -->
-  <section class="py-24 bg-white px-6">
-    <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12">
-      {mainServices.map(service => (
-        <div id={service.id} class="bg-slate-50 p-10 rounded-[40px] border border-slate-100 hover:border-blue-500 hover:bg-white hover:shadow-2xl transition-all duration-500 group">
+  <section class="py-24 bg-gradient-to-b from-white to-slate-50 px-6">
+  <div class="max-w-6xl mx-auto">
+    
+    <div class="grid lg:grid-cols-3 gap-10 place-items-center">
+      
+      {mainServices.map((service, index) => (
+        <div
+          id={service.id}
+          class={`group w-full max-w-md p-10 rounded-[32px] border transition-all duration-500 
+          ${index === 1 
+            ? "bg-blue-600 text-white shadow-2xl scale-105 border-blue-600" 
+            : "bg-white border-slate-200 hover:border-blue-500 hover:shadow-2xl hover:-translate-y-2"
+          }`}
+        >
+
+          {/* Top Section */}
           <div class="flex items-start justify-between mb-8">
-            <div class="text-6xl group-hover:scale-110 transition-transform">{service.icon}</div>
-            <div class="bg-white px-4 py-1 rounded-full text-xs font-black text-blue-600 border border-blue-100 uppercase tracking-widest">Active Service</div>
+            
+            <div class={`text-6xl transition-transform group-hover:scale-110 
+              ${index === 1 ? "text-white" : ""}`}>
+              {service.icon}
+            </div>
+
+            <div class={`px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest border
+              ${index === 1 
+                ? "bg-white/20 text-white border-white/30" 
+                : "bg-blue-50 text-blue-600 border-blue-100"
+              }`}>
+              {index === 1 ? "Most Popular" : "Service"}
+            </div>
+
           </div>
-          <h2 class="text-3xl font-bold text-slate-900 mb-4">{service.title}</h2>
-          <p class="text-slate-600 mb-8 leading-relaxed italic">{service.description}</p>
-          
-          <ul class="space-y-4">
-            {service.features.map(feature => (
-              <li class="flex items-center gap-3 text-slate-800 font-medium">
-                <svg class="h-5 w-5 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+
+          {/* Title */}
+          <h2 class={`text-2xl font-bold mb-4 
+            ${index === 1 ? "text-white" : "text-slate-900"}`}>
+            {service.title}
+          </h2>
+
+          {/* Description */}
+          <p class={`mb-8 leading-relaxed 
+            ${index === 1 ? "text-white/90" : "text-slate-600 italic"}`}>
+            {service.description}
+          </p>
+
+          {/* Features */}
+          <ul class="space-y-4 mb-8">
+            {service.features.map((feature) => (
+              <li class="flex items-center gap-3 text-sm font-medium">
+                <svg class={`h-5 w-5 ${index === 1 ? "text-white" : "text-blue-500"}`} 
+                     fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
                 </svg>
-                {feature}
+                <span class={`${index === 1 ? "text-white" : "text-slate-800"}`}>
+                  {feature}
+                </span>
               </li>
             ))}
           </ul>
+
+          {/* CTA */}
+          <button class={`w-full py-3 rounded-full font-semibold transition
+            ${index === 1 
+              ? "bg-white text-blue-600 hover:bg-slate-100" 
+              : "border border-blue-500 text-blue-600 hover:bg-blue-500 hover:text-white"
+            }`}>
+            Get Started →
+          </button>
+
         </div>
       ))}
+      
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- Process / Efficiency Section -->
   <section class="py-24 bg-slate-950 text-white px-6 overflow-hidden">

@@ -4,130 +4,156 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout title="Contact Us | Free Rental Valuation | Uddin Investment Ltd">
   
-
-  <!-- Hero Section -->
-  <section class="bg-slate-50 py-16 border-b border-slate-200">
-    <div class="max-w-7xl mx-auto px-6 text-center">
-      <h1 class="text-4xl md:text-6xl font-black text-slate-900 mb-4 italic decoration-blue-600 underline underline-offset-8">Get Your Free <br/> <span class="text-blue-600 italic underline decoration-slate-900">Rental Valuation.</span></h1>
-      <p class="text-lg text-slate-500 max-w-2xl mx-auto italic font-medium">
-        Speak with our expert team today and find out how much guaranteed rent you could be earning. We typically respond within 24 hours.
+  <!-- Hero Section with Background Pattern -->
+  <section class="relative bg-slate-50 py-20 lg:py-32 border-b border-slate-200 overflow-hidden">
+    <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
+    <div class="max-w-7xl mx-auto px-6 text-center relative z-10">
+      <div class="inline-flex items-center gap-2 bg-blue-50 border border-blue-200 px-4 py-2 rounded-full text-blue-700 text-xs font-black uppercase tracking-widest mb-6">
+        <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-600"></span>
+        </span>
+        Quick Response within 24 Hours
+      </div>
+      <h1 class="text-5xl md:text-7xl font-black text-slate-900 mb-6 italic tracking-tighter">
+        Get Your Free <br/> 
+        <span class="text-blue-600 underline decoration-slate-900 underline-offset-8 decoration-4">Rental Valuation.</span>
+      </h1>
+      <p class="text-lg text-slate-500 max-w-2xl mx-auto italic font-medium leading-relaxed">
+        Join hundreds of London landlords enjoying a stress-free income. Submit your property details today for an expert evaluation.
       </p>
     </div>
   </section>
 
   <!-- Contact Grid -->
   <section class="py-24 bg-white px-6">
-    <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20">
+    <div class="max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 lg:gap-20">
       
-      <!-- Contact Information -->
-      <div class="space-y-12">
-        <div>
-          <h2 class="text-3xl font-bold text-slate-900 mb-8 underline decoration-blue-500 underline-offset-8 decoration-4 italic">Our Office Information</h2>
-          <div class="space-y-8">
-            <div class="flex items-start gap-6 group">
-              <div class="bg-blue-600 text-white p-4 rounded-2xl shadow-lg group-hover:bg-slate-900 transition-colors">
-                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor font-bold"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-              </div>
-              <div>
-                <p class="text-xs font-black text-blue-600 uppercase tracking-widest mb-1 italic">Registered Office</p>
-                <p class="text-xl font-bold text-slate-800 italic">5 Elm Lawn Close</p>
-                <p class="text-slate-500 font-medium italic">Uxbridge, England, UB8 1NX</p>
-              </div>
+      <!-- Left Side: Info & Trust (4 cols) -->
+      <div class="lg:col-span-5 space-y-12">
+        <div class="space-y-8">
+          <h2 class="text-3xl font-black text-slate-900 italic underline decoration-blue-600 underline-offset-8 decoration-4">Our Information</h2>
+          
+          <div class="grid gap-6">
+            <!-- Office -->
+            <div class="group flex items-center gap-6 p-6 rounded-3xl bg-slate-50 border border-slate-100 hover:border-blue-500 transition-all">
+                <div class="bg-blue-600 text-white p-4 rounded-2xl shadow-lg shadow-blue-200 group-hover:bg-slate-900">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                </div>
+                <div>
+                    <p class="text-[10px] font-black text-blue-600 uppercase tracking-[0.2em] mb-1 italic">Registered Office</p>
+                    <p class="text-lg font-bold text-slate-800 italic leading-tight">5 Elm Lawn Close, Uxbridge, UB8 1NX</p>
+                </div>
             </div>
 
-            <div class="flex items-start gap-6 group">
-              <div class="bg-blue-600 text-white p-4 rounded-2xl shadow-lg group-hover:bg-slate-900 transition-colors">
-                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor font-bold"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-              </div>
-              <div>
-                <p class="text-xs font-black text-blue-600 uppercase tracking-widest mb-1 italic">Email Support</p>
-                <a href="mailto:info@uddininvestmentltd.com" class="text-xl font-bold text-slate-800 hover:text-blue-600 transition-colors italic decoration-slate-200 underline">info@uddininvestmentltd.com</a>
-              </div>
+            <!-- Email -->
+            <div class="group flex items-center gap-6 p-6 rounded-3xl bg-slate-50 border border-slate-100 hover:border-blue-500 transition-all">
+                <div class="bg-blue-600 text-white p-4 rounded-2xl shadow-lg shadow-blue-200 group-hover:bg-slate-900">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                </div>
+                <div>
+                    <p class="text-[10px] font-black text-blue-600 uppercase tracking-[0.2em] mb-1 italic">Email Support</p>
+                    <p class="text-lg font-bold text-slate-800 italic leading-tight">info@uddininvestmentltd.com</p>
+                </div>
             </div>
           </div>
         </div>
 
-        <!-- Trust Box -->
+        <!-- Why Contact Us Box -->
         <div class="bg-slate-900 p-10 rounded-[40px] text-white relative overflow-hidden shadow-2xl">
-          <h3 class="text-2xl font-bold mb-4 italic decoration-blue-400 underline underline-offset-4">Why Contact Us?</h3>
-          <ul class="space-y-4">
-            <li class="flex items-center gap-3 italic font-medium"><span class="h-2 w-2 bg-blue-500 rounded-full"></span> 0% Management Commission</li>
-            <li class="flex items-center gap-3 italic font-medium"><span class="h-2 w-2 bg-blue-500 rounded-full"></span> Guaranteed Rent for 1-5 Years</li>
-            <li class="flex items-center gap-3 italic font-medium"><span class="h-2 w-2 bg-blue-500 rounded-full"></span> We handle all maintenance issues</li>
-            <li class="flex items-center gap-3 italic font-medium"><span class="h-2 w-2 bg-blue-500 rounded-full"></span> Expert HMO & Portfolio Specialists</li>
-          </ul>
-          <div class="mt-8 pt-8 border-t border-slate-800">
-            <p class="text-xs text-slate-400 font-bold uppercase tracking-widest">Company Number: 16787880</p>
-            <p class="text-xs text-slate-400 mt-2 italic font-medium leading-none">Registered in England & Wales</p>
+          <div class="relative z-10">
+            <h3 class="text-2xl font-bold mb-6 italic border-l-4 border-blue-500 pl-4 uppercase tracking-tighter">Why Partner With Us?</h3>
+            <ul class="space-y-5 text-sm font-medium italic">
+                <li class="flex items-center gap-3"><svg class="h-5 w-5 text-blue-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg> 0% Management Commission</li>
+                <li class="flex items-center gap-3"><svg class="h-5 w-5 text-blue-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg> Fixed Monthly Rent for 1-5 Years</li>
+                <li class="flex items-center gap-3"><svg class="h-5 w-5 text-blue-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg> Full In-house Maintenance Support</li>
+            </ul>
+            <div class="mt-8 pt-8 border-t border-slate-800 text-[10px] uppercase tracking-widest text-slate-500">
+                Company No: 16787880 | UK Registered
+            </div>
           </div>
+          <!-- Decorative Blur -->
+          <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-blue-600/20 rounded-full blur-3xl"></div>
         </div>
       </div>
 
-      <!-- Contact Form -->
-      <div class="bg-white p-10 md:p-12 rounded-[50px] border-2 border-slate-100 shadow-2xl shadow-slate-200/50">
-        <h2 class="text-3xl font-bold text-slate-900 mb-8 italic underline decoration-blue-600 underline-offset-8">Property Details Form</h2>
-        <form class="space-y-6">
-          <div class="grid md:grid-cols-2 gap-6">
-            <div>
-              <label class="block text-sm font-black text-slate-700 uppercase tracking-widest mb-2 italic">Full Name</label>
-              <input type="text" placeholder="John Doe" class="w-full px-5 py-4 rounded-2xl bg-slate-50 border border-slate-200 focus:ring-4 focus:ring-blue-100 focus:border-blue-500 outline-none transition-all font-medium" />
-            </div>
-            <div>
-              <label class="block text-sm font-black text-slate-700 uppercase tracking-widest mb-2 italic">Phone Number</label>
-              <input type="tel" placeholder="+44 7000 000000" class="w-full px-5 py-4 rounded-2xl bg-slate-50 border border-slate-200 focus:ring-4 focus:ring-blue-100 focus:border-blue-500 outline-none transition-all font-medium" />
-            </div>
-          </div>
+      <!-- Right Side: Form (7 cols) -->
+      <div class="lg:col-span-7">
+        <div class="bg-white p-8 md:p-12 rounded-[50px] border border-slate-100 shadow-[0_20px_50px_rgba(0,0,0,0.05)] relative">
+          <h2 class="text-3xl font-black text-slate-900 mb-8 italic underline decoration-blue-600 underline-offset-8 decoration-4 uppercase tracking-tighter">Property Details Form</h2>
           
-          <div>
-            <label class="block text-sm font-black text-slate-700 uppercase tracking-widest mb-2 italic">Property Postcode / Area</label>
-            <input type="text" placeholder="E.g. E14, Barking, Ilford" class="w-full px-5 py-4 rounded-2xl bg-slate-50 border border-slate-200 focus:ring-4 focus:ring-blue-100 focus:border-blue-500 outline-none transition-all font-medium" />
-          </div>
+          <form 
+            name="contact" 
+            method="POST" 
+            data-netlify="true" 
+            netlify-honeypot="bot-field"
+            action="/success"
+            class="space-y-6"
+          >
+            <p class="hidden">
+              <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+            </p>
+            <input type="hidden" name="form-name" value="contact" />
 
-          <div>
-            <label class="block text-sm font-black text-slate-700 uppercase tracking-widest mb-2 italic">Service Required</label>
-            <select class="w-full px-5 py-4 rounded-2xl bg-slate-50 border border-slate-200 focus:ring-4 focus:ring-blue-100 focus:border-blue-500 outline-none transition-all font-bold text-slate-800">
-              <option>Guaranteed Rent Scheme</option>
-              <option>HMO Management</option>
-              <option>Portfolio Management</option>
-              <option>General Inquiry</option>
-            </select>
-          </div>
+            <div class="grid md:grid-cols-2 gap-6">
+              <div class="space-y-2">
+                <label class="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] ml-2 italic">Full Name</label>
+                <input type="text" name="name" required placeholder="John Doe" class="w-full px-6 py-4 rounded-2xl bg-slate-50 border-2 border-transparent focus:border-blue-500 focus:bg-white outline-none transition-all font-bold italic text-slate-800 shadow-inner" />
+              </div>
+              <div class="space-y-2">
+                <label class="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] ml-2 italic">Phone Number</label>
+                <input type="tel" name="phone" required placeholder="+44 7000 000000" class="w-full px-6 py-4 rounded-2xl bg-slate-50 border-2 border-transparent focus:border-blue-500 focus:bg-white outline-none transition-all font-bold italic text-slate-800 shadow-inner" />
+              </div>
+            </div>
+            
+            <div class="space-y-2">
+              <label class="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] ml-2 italic">Property Postcode / Area</label>
+              <input type="text" name="postcode" required placeholder="E.g. E14, Barking, Romford" class="w-full px-6 py-4 rounded-2xl bg-slate-50 border-2 border-transparent focus:border-blue-500 focus:bg-white outline-none transition-all font-bold italic text-slate-800 shadow-inner" />
+            </div>
 
-          <div>
-            <label class="block text-sm font-black text-slate-700 uppercase tracking-widest mb-2 italic">Additional Information</label>
-            <textarea rows="4" placeholder="How many bedrooms? Any current tenants?" class="w-full px-5 py-4 rounded-2xl bg-slate-50 border border-slate-200 focus:ring-4 focus:ring-blue-100 focus:border-blue-500 outline-none transition-all font-medium"></textarea>
-          </div>
+            <div class="space-y-2">
+              <label class="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] ml-2 italic">Service Required</label>
+              <select name="service" class="w-full px-6 py-4 rounded-2xl bg-slate-50 border-2 border-transparent focus:border-blue-500 focus:bg-white outline-none transition-all font-bold italic text-slate-800 shadow-inner">
+                <option value="guaranteed-rent">Guaranteed Rent Scheme</option>
+                <option value="hmo-management">HMO Management</option>
+                <option value="general">General Inquiry</option>
+              </select>
+            </div>
 
-          <button type="submit" class="w-full py-5 bg-blue-600 text-white rounded-2xl font-black text-xl hover:bg-slate-900 transition-all shadow-xl shadow-blue-200 active:scale-95">
-            Submit Valuation Request
-          </button>
-          
-          <p class="text-center text-slate-400 text-xs font-bold uppercase tracking-widest mt-4 italic leading-relaxed">
-            By submitting, you agree to our privacy policy and terms of service.
-          </p>
-        </form>
+            <div class="space-y-2">
+              <label class="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] ml-2 italic">Additional Information</label>
+              <textarea name="message" rows="4" placeholder="How many bedrooms? Is the property currently vacant?" class="w-full px-6 py-4 rounded-2xl bg-slate-50 border-2 border-transparent focus:border-blue-500 focus:bg-white outline-none transition-all font-bold italic text-slate-800 shadow-inner"></textarea>
+            </div>
+
+            <button type="submit" class="w-full py-5 bg-blue-600 text-white rounded-2xl font-black text-xl hover:bg-slate-900 transition-all shadow-xl shadow-blue-200 active:scale-95 uppercase italic tracking-widest">
+              Submit Request
+            </button>
+            
+            <p class="text-center text-[10px] font-bold text-slate-400 uppercase tracking-widest mt-4 italic">
+                Secure SSL Encrypted Transmission
+            </p>
+          </form>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- FAQ Short Section -->
+  <!-- FAQ Section with Clean Design -->
   <section class="py-24 bg-slate-50 px-6">
-    <div class="max-w-4xl mx-auto text-center">
-      <h2 class="text-3xl font-bold text-slate-900 mb-12 italic decoration-blue-600 underline underline-offset-4">Frequently Asked Questions</h2>
-      <div class="grid gap-6 text-left">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-4xl font-black text-slate-900 mb-16 text-center italic underline decoration-blue-600 underline-offset-8 decoration-4">FAQ</h2>
+      <div class="grid gap-6">
         {[
           ["How fast can you start?", "We can typically start a Guaranteed Rent contract within 48 hours of inspection and compliance checks."],
-          ["What properties do you accept?", "We accept everything from studio flats to large multi-bedroom houses and HMOs across London and Essex."]
+          ["Do I need to be in London?", "We cover all areas listed in our network across London & Essex, regardless of where you currently live."]
         ].map(([q, a]) => (
-          <div class="bg-white p-8 rounded-3xl border border-slate-200">
-            <h3 class="font-black text-slate-900 mb-2 italic underline decoration-blue-100 underline-offset-4">{q}</h3>
-            <p class="text-slate-500 font-medium italic">{a}</p>
+          <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+            <h3 class="font-black text-lg text-slate-900 mb-3 italic uppercase tracking-tight">{q}</h3>
+            <p class="text-slate-500 font-medium italic leading-relaxed">{a}</p>
           </div>
         ))}
       </div>
     </div>
   </section>
-
-  
 
 </Layout>

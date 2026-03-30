@@ -89,7 +89,7 @@ const services = [
 
         {/* Icon */}
         <div class="w-16 h-16 flex items-center justify-center rounded-2xl 
-                    bg-gradient-to-tr from-blue-500 to-indigo-500 text-white text-2xl mb-6 
+                    bg-linear-to-tr from-blue-500 to-indigo-500 text-white text-2xl mb-6 
                     shadow-lg group-hover:scale-110 transition">
           {s.icon}
         </div>
@@ -173,32 +173,88 @@ const services = [
         </div>
       </div>
 
-      <form class="bg-white p-8 md:p-10 rounded-3xl space-y-4 shadow-2xl">
-        <div class="grid md:grid-cols-2 gap-4">
-          <div>
-            <label class="block text-slate-700 text-sm font-bold mb-2">Name</label>
-            <input type="text" placeholder="Your Name" class="w-full px-4 py-3 rounded-xl border border-slate-200 text-slate-900 focus:ring-2 focus:ring-blue-500 outline-none transition-all" />
-          </div>
-          <div>
-            <label class="block text-slate-700 text-sm font-bold mb-2">Phone</label>
-            <input type="tel" placeholder="Your Phone" class="w-full px-4 py-3 rounded-xl border border-slate-200 text-slate-900 focus:ring-2 focus:ring-blue-500 outline-none transition-all" />
-          </div>
-        </div>
-        <div>
-          <label class="block text-slate-700 text-sm font-bold mb-2">Property Address</label>
-          <input type="text" placeholder="Full Postcode / Street" class="w-full px-4 py-3 rounded-xl border border-slate-200 text-slate-900 focus:ring-2 focus:ring-blue-500 outline-none transition-all" />
-        </div>
-        <div>
-          <label class="block text-slate-700 text-sm font-bold mb-2">Property Type</label>
-          <select class="w-full px-4 py-3 rounded-xl border border-slate-200 text-slate-900 focus:ring-2 focus:ring-blue-500 outline-none transition-all">
-            <option>1 Bedroom Flat</option>
-            <option>2 Bedroom Flat</option>
-            <option>3+ Bedroom House</option>
-            <option>HMO Property</option>
-          </select>
-        </div>
-        <button class="w-full py-4 bg-blue-600 text-white font-black rounded-xl hover:bg-blue-700 transition-all shadow-lg shadow-blue-200">Submit Valuation Request</button>
-      </form>
+      <form 
+  name="property-valuation" 
+  method="POST" 
+  data-netlify="true" 
+  netlify-honeypot="bot-field"
+  action="/success"
+  class="bg-white p-8 md:p-10 rounded-[40px] border border-slate-100 space-y-5 shadow-[0_20px_50px_rgba(0,0,0,0.05)] relative overflow-hidden group hover:border-blue-500 transition-all duration-500"
+>
+  <!-- Netlify Spam Protection -->
+  <p class="hidden">
+    <label>Don’t fill this out: <input name="bot-field" /></label>
+  </p>
+  <input type="hidden" name="form-name" value="property-valuation" />
+
+  <!-- Form Header (Optional but recommended) -->
+  <div class="mb-6">
+    <h3 class="text-xl font-black text-slate-900 italic uppercase tracking-tighter">Get Your Free <span class="text-blue-600">Rental Offer</span></h3>
+    <p class="text-xs text-slate-400 font-bold italic">Submit details for a quick expert evaluation.</p>
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-5">
+    <div>
+      <label class="block text-[10px] font-black text-slate-500 uppercase tracking-widest mb-2 italic ml-1">Name</label>
+      <input 
+        type="text" 
+        name="landlord-name"
+        required 
+        placeholder="Your Name" 
+        class="w-full px-5 py-3.5 rounded-2xl bg-slate-50 border-2 border-transparent focus:border-blue-500 focus:bg-white outline-none transition-all font-bold italic text-slate-800 shadow-inner placeholder:text-slate-300" 
+      />
+    </div>
+    <div>
+      <label class="block text-[10px] font-black text-slate-500 uppercase tracking-widest mb-2 italic ml-1">Phone</label>
+      <input 
+        type="tel" 
+        name="landlord-phone"
+        required 
+        placeholder="Your Phone" 
+        class="w-full px-5 py-3.5 rounded-2xl bg-slate-50 border-2 border-transparent focus:border-blue-500 focus:bg-white outline-none transition-all font-bold italic text-slate-800 shadow-inner placeholder:text-slate-300" 
+      />
+    </div>
+  </div>
+
+  <div>
+    <label class="block text-[10px] font-black text-slate-500 uppercase tracking-widest mb-2 italic ml-1">Property Address</label>
+    <input 
+      type="text" 
+      name="property-address"
+      required 
+      placeholder="Full Postcode / Street Name" 
+      class="w-full px-5 py-3.5 rounded-2xl bg-slate-50 border-2 border-transparent focus:border-blue-500 focus:bg-white outline-none transition-all font-bold italic text-slate-800 shadow-inner placeholder:text-slate-300" 
+    />
+  </div>
+
+  <div>
+    <label class="block text-[10px] font-black text-slate-500 uppercase tracking-widest mb-2 italic ml-1">Property Type</label>
+    <select 
+      name="property-type"
+      class="w-full px-5 py-3.5 rounded-2xl bg-slate-50 border-2 border-transparent focus:border-blue-500 focus:bg-white outline-none transition-all font-black italic text-slate-800 shadow-inner appearance-none cursor-pointer"
+    >
+      <option value="1-bed">1 Bedroom Flat</option>
+      <option value="2-bed">2 Bedroom Flat</option>
+      <option value="3-plus-house">3+ Bedroom House</option>
+      <option value="hmo">HMO Property</option>
+      <option value="other">Other</option>
+    </select>
+  </div>
+
+  <button 
+    type="submit" 
+    class="w-full py-5 bg-blue-600 text-white font-black rounded-2xl hover:bg-slate-900 transition-all shadow-xl shadow-blue-200 uppercase italic tracking-widest active:scale-[0.98]"
+  >
+    Submit Valuation Request
+  </button>
+
+  <p class="text-[9px] text-center text-slate-400 font-bold uppercase tracking-widest mt-2 italic">
+    Confidential & No-Obligation Valuation
+  </p>
+
+  <!-- Visual Accent -->
+  <div class="absolute top-0 right-0 w-1 h-full bg-blue-600 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</form>
     </div>
     
     <!-- Background Decor -->

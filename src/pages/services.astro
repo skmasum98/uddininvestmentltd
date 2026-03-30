@@ -43,7 +43,7 @@ const mainServices = [
   </section>
 
   <!-- Main Services Grid -->
-  <section class="py-24 bg-gradient-to-b from-white to-slate-50 px-6">
+  <section class="py-24 bg-linear-to-b from-white to-slate-50 px-6">
   <div class="max-w-6xl mx-auto">
     
     <div class="grid lg:grid-cols-3 gap-10 place-items-center">
@@ -51,7 +51,7 @@ const mainServices = [
       {mainServices.map((service, index) => (
         <div
           id={service.id}
-          class={`group w-full max-w-md p-10 rounded-[32px] border transition-all duration-500 
+          class={`group w-full max-w-md p-10 rounded-4xl border transition-all duration-500 
           ${index === 1 
             ? "bg-blue-600 text-white shadow-2xl scale-105 border-blue-600" 
             : "bg-white border-slate-200 hover:border-blue-500 hover:shadow-2xl hover:-translate-y-2"
